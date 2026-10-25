@@ -35,3 +35,62 @@ header p {
     font-size: 1.4rem;
     padding: 0 0 4.375rem 2.875rem;
 }
+
+.items {
+    max-width: 37.5rem; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2.8125rem;
+}
+
+.items hr {
+    margin: 0 auto;
+    max-width: 31.75rem; 
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #D2D2D2;
+}
+
+.item {
+    display: flex;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    max-width: 31.75rem; 
+    width: 100%;
+    padding: 2.8125rem 0;
+}
+
+.item-img {
+    font-size: 5rem;
+}
+
+.item p, .item h2 {
+    margin: 0;
+}
+
+.item h2 {
+    font-weight: 400;
+    font-size: 1.75rem;
+}
+
+.item-ingreds {
+    font-size: 1rem;
+    color: #8B8B8B;
+}
+
+.item-price {
+    font-size: 1.25rem;
+}
+
+.item button {
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: auto 0;
+    margin-left: auto;
+    background-color: #FFFFFF;
+    padding: 1.25rem;
+    border: 1.5px solid #DEDEDE;
+}
