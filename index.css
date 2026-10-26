@@ -8,6 +8,8 @@ body {
     font-family: "Smythe", system-ui;
 }
 
+/* Header */
+
 header {
     color: #FFFFFF;
     max-width: 37.5rem; 
@@ -36,7 +38,9 @@ header p {
     padding: 0 0 4.375rem 2.875rem;
 }
 
-.items {
+/* Items */
+
+.items, .cart, .order-thank {
     max-width: 37.5rem; 
     width: 100%;
     margin: 0 auto;
@@ -93,4 +97,92 @@ header p {
     background-color: #FFFFFF;
     padding: 1.25rem;
     border: 1.5px solid #DEDEDE;
+}
+
+.item button:hover {
+    background-color: #16DB99;
+}
+
+/* Cart */
+
+.cart {
+    display: none;
+}
+
+.cart h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 2.4125rem;
+    margin-bottom: 2.5rem;
+}
+
+.item-info {
+    display: flex;
+}
+
+.item-total {
+    display: flex;
+}
+
+.cart-item, .cart-price {
+    font-size: 1.75rem;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 1.075rem;
+}
+
+.cart-price {
+    font-size: 1.25rem;
+    margin-left: auto;
+}
+
+.item-info button {
+    border: none;
+    background-color: white;
+    color: #BBBBBB;
+    font-size: 0.75rem;
+    font-family: inherit;
+}
+
+.item-info button:hover {
+    color: red;
+}
+
+.cart hr {
+    margin: 0 auto;
+    max-width: 31.75rem; 
+    width: 100%;
+    border: none;
+    height: 2px;
+    background-color: #393333;
+}
+
+.order-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 3px;
+}
+
+/* Thank you message */
+.order-thank {
+    margin-top: 1rem;
+}
+
+.order-thank p{
+    font-size: 2rem;
+    color: #065F46;
+    background-color: #ECFDF5;
+    text-align: center;
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
 }
