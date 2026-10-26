@@ -77,6 +77,33 @@
         <section class="order-thank">
             <p>Thanks, James! Your order is on its way!</p>
         </section>
+
+        <section class="pay-modal">
+            <form>
+                <fieldset>
+                    <legend>Enter card details</legend>
+                    <input 
+                        type="text" 
+                        placeholder="Enter your name" 
+                        id="pay-name" 
+                        required>
+                    <input 
+                        type="number" 
+                        placeholder="Enter card number" 
+                        id="pay-card" 
+                        required>
+                    <input 
+                        type="text"
+                        placeholder="Enter CVV"
+                        id="pay-cvv"
+                        inputmode="numeric"
+                        pattern="[0-9]{3}"
+                        maxlength="3"
+                        required>
+                    <button type="submit">Pay</button>
+                </fieldset>
+            </form>
+        </section>
         
 
         <script src="index.js" type="module"></script>
