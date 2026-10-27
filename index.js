@@ -3,15 +3,22 @@ import { menuArray } from "./data.js"
 const itemsEle = document.getElementById('items')
 const payForm = document.getElementById('pay-form')
 
+let cartArr = []
+
 document.addEventListener('click', function(e){
     // do submit buttons first then the menu items
     const menuId = e.target.dataset.id
     if (menuId){
-        console.log("PIZZA")
-        // it was a menu item
-        // so search the database for that id (safetly check)
-        // add that id to "cart" array
-        // call renderCart function on cartArry
+        
+        // // it was a menu item
+        // let test = menuArray.filter(item => {
+        //     //console.log(`itemID: ${typeof(item.id)} menuID: ${typeof(menuId)}`)
+        //     return item.id === Number(menuId)
+        // })
+        // // so search the database for that id (safetly check)
+
+        cartArr.push(Number(menuId))
+        renderCart()
     }
     // else it wasnt a menu item 
     // (at this point it should be other 2 btns are accounted for above)
@@ -38,6 +45,10 @@ function renderMenu() {
     });
 
     itemsEle.innerHTML = itemsHtml
+}
+
+function renderCart() {
+    console.log(cartArr)
 }
 
 renderMenu()
