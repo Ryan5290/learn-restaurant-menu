@@ -5,9 +5,17 @@ const payForm = document.getElementById('pay-form')
 
 document.addEventListener('click', function(e){
     // do submit buttons first then the menu items
-    if (e.target.dataset.id === '0'){
+    const menuId = e.target.dataset.id
+    if (menuId){
         console.log("PIZZA")
+        // it was a menu item
+        // so search the database for that id (safetly check)
+        // add that id to "cart" array
+        // call renderCart function on cartArry
     }
+    // else it wasnt a menu item 
+    // (at this point it should be other 2 btns are accounted for above)
+    // ^ not coded yet though
 })
 
 
