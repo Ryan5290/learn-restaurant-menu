@@ -9,7 +9,7 @@ document.addEventListener('click', function(e){
     // do submit buttons first then the menu items
     const menuId = e.target.dataset.id
     if (menuId){
-        
+
         // // it was a menu item
         // let test = menuArray.filter(item => {
         //     //console.log(`itemID: ${typeof(item.id)} menuID: ${typeof(menuId)}`)
@@ -48,7 +48,44 @@ function renderMenu() {
 }
 
 function renderCart() {
-    console.log(cartArr)
+    const cartSection = document.createElement('section')
+    const objsInCart = menuArray.filter(item => {
+        return cartArr.includes(item.id)
+    })
+    const totalPrice = objsInCart.map((total, item) => {
+        total += item.price
+    }, 0)
+    let cartHtml = `
+        <section class="cart">
+            <h2>Your order</h2>
+            <div class="cart-items" id="cart-items">
+        `
+
+    for (let item of objsInCart) {
+        cartHtml += `
+            <div class="item-info">
+                <p class="cart-item">${item.name}</p>
+                <button>remove</button>
+                <p class="cart-price">$${item.price}</p>
+            </div>
+        `
+    }
+
+    cartHtml += `
+            <hr>
+            <div class="item-total">
+                <p class="cart-item">Total price:</p>
+                <p class="cart-price">$${totalPrice}</p>
+            </div>
+        </div>
+        <button class="order-btn">Complete order</button>
+    </section>
+    `
+
+    cartSection.innerHTML = cartHtml
+    document.body.append(cartSection)
+
+
 }
 
 renderMenu()
