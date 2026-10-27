@@ -105,9 +105,9 @@ header p {
 
 /* Cart */
 
-.cart {
+/* .cart {
     display: none;
-}
+} */
 
 .cart h2 {
     font-size: 1.75rem;
@@ -242,4 +242,8 @@ input[type="number"] {
     font-size: 1.5rem;
     font-weight: 700;
     
+}
+
+.hide {
+    display: none;
 }

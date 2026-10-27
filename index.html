@@ -19,8 +19,8 @@
             <h1>Jimmy's Diner</h1>
             <p>The best burgers and pizzas in town.</p>
         </header>
-        <section class="items">
-            <div class="item">
+        <section class="items" id="items">
+            <!-- <div class="item">
                 <p class="item-img">🍕</p>
                 <div class="item-details">
                     <h2>Hard Code Pizza</h2>
@@ -49,10 +49,10 @@
                 </div>
                 <button>+</button>
             </div>
-            <hr>
+            <hr> -->
         </section>
 
-        <section class="cart">
+        <section class="cart hide">
             <h2>Your order</h2>
             <div class="cart-items">
                 <div class="item-info">
@@ -74,12 +74,12 @@
             <button class="order-btn">Complete order</button>
         </section>
 
-        <section class="order-thank">
+        <section class="order-thank hide">
             <p>Thanks, James! Your order is on its way!</p>
         </section>
 
-        <section class="pay-modal">
-            <form>
+        <section class="pay-modal hide">
+            <form id="pay-form">
                 <fieldset>
                     <legend>Enter card details</legend>
                     <input 
