@@ -48,18 +48,21 @@ function renderMenu() {
 }
 
 function renderCart() {
-    const cartSection = document.createElement('section')
+    const cartEle = document.getElementById('cart')
+    if (!cartArr.length) {
+        cartEle.classList.add('hide')
+        return // cart is empty so don't show it
+    }
+    cartEle.classList.remove('hide')
+
+    const cartContents = document.getElementById('cart-items')
     const objsInCart = menuArray.filter(item => {
         return cartArr.includes(item.id)
     })
-    const totalPrice = objsInCart.map((total, item) => {
-        total += item.price
+    const totalPrice = objsInCart.reduce((total, item) => {
+        return total += item.price
     }, 0)
-    let cartHtml = `
-        <section class="cart">
-            <h2>Your order</h2>
-            <div class="cart-items" id="cart-items">
-        `
+    let cartHtml = ''
 
     for (let item of objsInCart) {
         cartHtml += `
@@ -71,20 +74,13 @@ function renderCart() {
         `
     }
 
-    cartHtml += `
-            <hr>
-            <div class="item-total">
-                <p class="cart-item">Total price:</p>
-                <p class="cart-price">$${totalPrice}</p>
-            </div>
-        </div>
-        <button class="order-btn">Complete order</button>
-    </section>
-    `
+    cartContents.innerHTML = cartHtml
 
-    cartSection.innerHTML = cartHtml
-    document.body.append(cartSection)
+    document.getElementById('total-price').innerText = `$${totalPrice}`
 
+    // need to allow multiple of the same item in the cart
+    // [id: amount] array of pairs or something simpler?
+    // then work on remove button/s
 
 }
 
