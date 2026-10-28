@@ -40,6 +40,9 @@ pay.addEventListener('click', function() {
     document.getElementById('modal').classList.add('hide')
     cartEle.classList.add('hide')
     thankMessage.classList.remove('hide')
+
+    // grab the customer name and put in the ty message
+    // check the form - valid etc and then that error
 })
 
 
