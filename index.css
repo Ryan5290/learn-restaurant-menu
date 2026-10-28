@@ -189,12 +189,19 @@ header p {
 
 /* Pay modal */
 .pay-modal {
-    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5.19px 5.19px 255.44px 0 rgb(0 0 0 / 0.5);
     max-width: 31.75rem; 
     width: 100%;
-    margin: 0 auto;
+    height: 23.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 1rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
 }
 
 .pay-modal fieldset {

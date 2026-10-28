@@ -2,6 +2,7 @@ import { menuArray } from "./data.js"
 
 const itemsEle = document.getElementById('items')
 const payForm = document.getElementById('pay-form')
+const orderBtn = document.getElementById('complete-order')
 
 let cartArr = []
 
@@ -25,6 +26,10 @@ document.addEventListener('click', function(e){
     // else it wasnt a menu item 
     // (at this point it should be other 2 btns are accounted for above)
     // ^ not coded yet though
+})
+
+orderBtn.addEventListener('click', function(){
+    //modal shows up
 })
 
 
