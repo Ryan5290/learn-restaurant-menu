@@ -76,7 +76,7 @@
         </section>
 
         <section class="order-thank hide" id="thank-message">
-            <p>Thanks, James! Your order is on its way!</p>
+            <p id="thank-message-p"></p>
         </section>
 
         <section class="pay-modal hide" id="modal">
@@ -84,16 +84,19 @@
                 <fieldset>
                     <legend>Enter card details</legend>
                     <input 
+                        name="name"
                         type="text" 
                         placeholder="Enter your name" 
                         id="pay-name" 
                         required>
                     <input 
+                        name="number"
                         type="number" 
                         placeholder="Enter card number" 
                         id="pay-card" 
                         required>
                     <input 
+                        name="cvv"
                         type="text"
                         placeholder="Enter CVV"
                         id="pay-cvv"

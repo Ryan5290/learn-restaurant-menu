@@ -3,13 +3,15 @@ import { menuArray } from "./data.js"
 const itemsEle = document.getElementById('items')
 const payForm = document.getElementById('pay-form')
 const orderBtn = document.getElementById('complete-order')
-const pay = document.getElementById('pay')
 const cartEle = document.getElementById('cart')
 const thankMessage = document.getElementById('thank-message')
 
 let cartArr = []
 
 document.addEventListener('click', function(e){
+    // in case a new order is done right after the first and the page didn't reset
+    thankMessage.classList.add('hide')
+    
     const target = e.target // what was clicked
 
     // target was a add button
@@ -36,13 +38,16 @@ orderBtn.addEventListener('click', function(){
     document.getElementById('modal').classList.remove('hide')
 })
 
-pay.addEventListener('click', function() {
+payForm.addEventListener('submit', function(e){
+    e.preventDefault()
     document.getElementById('modal').classList.add('hide')
     cartEle.classList.add('hide')
     thankMessage.classList.remove('hide')
-
-    // grab the customer name and put in the ty message
-    // check the form - valid etc and then that error
+    
+    displayThankYou(new FormData(e.target).get('name'))
+    
+    payForm.reset()
+    cartArr = []
 })
 
 
@@ -109,6 +114,11 @@ function renderCart() {
 
 }
 
+function displayThankYou(name) {
+    document.getElementById('thank-message-p').innerText = 
+        `Thanks, ${name}! Your order is on its way!`
+}
+
 renderMenu()
 
 
@@ -117,10 +127,7 @@ renderMenu()
 
 
 
-payForm.addEventListener('submit', function(e){
-    // close modal
-    // set thank you message
-})
+
 
 
 
