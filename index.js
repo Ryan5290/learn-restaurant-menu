@@ -8,14 +8,15 @@ const thankMessage = document.getElementById('thank-message')
 
 let cartArr = []
 
+// 
 document.addEventListener('click', function(e){
-    // in case a new order is done right after the first and the page didn't reset
-    thankMessage.classList.add('hide')
-    
     const target = e.target // what was clicked
 
     // target was a add button
     if (target.dataset.add){
+        // in case a new order is done right after the first and the page didn't reset
+        thankMessage.classList.add('hide')
+
         const menuId = target.dataset.add
         cartArr.push(Number(menuId))        
         renderCart()
@@ -27,10 +28,6 @@ document.addEventListener('click', function(e){
         cartArr.splice(cartIndex, 1)
         renderCart()
     }
-
-    // else it wasnt a menu item 
-    // (at this point it should be other 2 btns are accounted for above)
-    // ^ not coded yet though
 })
 
 orderBtn.addEventListener('click', function(){
@@ -80,9 +77,6 @@ function renderCart() {
     cartEle.classList.remove('hide')
 
     const cartContents = document.getElementById('cart-items')
-    // const objsInCart = menuArray.filter(item => {
-    //     return cartArr.includes(item.id)
-    // })
     const objsInCart = cartArr.map(cartItem => 
         menuArray.find(menuItem => cartItem === menuItem.id)
     )
@@ -92,7 +86,6 @@ function renderCart() {
     }, 0)
     let cartHtml = ''
 
-    // for (let item of objsInCart) {
     for (let i = 0; i < objsInCart.length; i++) {
         const { name, price } = objsInCart[i]
         cartHtml += `
@@ -107,11 +100,6 @@ function renderCart() {
     cartContents.innerHTML = cartHtml
 
     document.getElementById('total-price').innerText = `$${totalPrice}`
-
-    // need to allow multiple of the same item in the cart
-    // [id: amount] array of pairs or something simpler?
-    // then work on remove button/s
-
 }
 
 function displayThankYou(name) {

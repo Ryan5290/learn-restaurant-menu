@@ -59,7 +59,6 @@ header p {
 .item {
     display: flex;
     margin: 0 auto;
-    /* border: 1px solid black; */
     max-width: 31.75rem; 
     width: 100%;
     padding: 2.8125rem 0;
@@ -104,11 +103,6 @@ header p {
 }
 
 /* Cart */
-
-/* .cart {
-    display: none;
-} */
-
 .cart h2 {
     font-size: 1.75rem;
     font-weight: 400;
@@ -219,13 +213,13 @@ header p {
     padding: 0.8rem 0.75rem;
 }
 
+/* Remove up down arrows on number input*/
 /* Chrome, Safari, Edge */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
