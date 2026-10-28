@@ -3,6 +3,9 @@ import { menuArray } from "./data.js"
 const itemsEle = document.getElementById('items')
 const payForm = document.getElementById('pay-form')
 const orderBtn = document.getElementById('complete-order')
+const pay = document.getElementById('pay')
+const cartEle = document.getElementById('cart')
+const thankMessage = document.getElementById('thank-message')
 
 let cartArr = []
 
@@ -30,6 +33,13 @@ document.addEventListener('click', function(e){
 
 orderBtn.addEventListener('click', function(){
     //modal shows up
+    document.getElementById('modal').classList.remove('hide')
+})
+
+pay.addEventListener('click', function() {
+    document.getElementById('modal').classList.add('hide')
+    cartEle.classList.add('hide')
+    thankMessage.classList.remove('hide')
 })
 
 
@@ -55,7 +65,6 @@ function renderMenu() {
 }
 
 function renderCart() {
-    const cartEle = document.getElementById('cart')
     if (!cartArr.length) {
         cartEle.classList.add('hide')
         return // cart is empty so don't show it

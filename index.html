@@ -75,11 +75,11 @@
             <button class="order-btn" id="complete-order">Complete order</button>
         </section>
 
-        <section class="order-thank hide">
+        <section class="order-thank hide" id="thank-message">
             <p>Thanks, James! Your order is on its way!</p>
         </section>
 
-        <section class="pay-modal">
+        <section class="pay-modal hide" id="modal">
             <form id="pay-form">
                 <fieldset>
                     <legend>Enter card details</legend>
@@ -101,7 +101,7 @@
                         pattern="[0-9]{3}"
                         maxlength="3"
                         required>
-                    <button type="submit">Pay</button>
+                    <button type="submit" id="pay">Pay</button>
                 </fieldset>
             </form>
         </section>
