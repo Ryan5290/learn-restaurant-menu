@@ -9,7 +9,7 @@ document.addEventListener('click', function(e){
     // do submit buttons first then the menu items
     const menuId = e.target.dataset.id
     if (menuId){
-
+        const menuIdNum = Number(menuId)
         // // it was a menu item
         // let test = menuArray.filter(item => {
         //     //console.log(`itemID: ${typeof(item.id)} menuID: ${typeof(menuId)}`)
@@ -17,7 +17,17 @@ document.addEventListener('click', function(e){
         // })
         // // so search the database for that id (safetly check)
 
-        cartArr.push(Number(menuId))
+        // returns the first match (actual not copy) or undefined
+        const idInCart = cartArr.find(idPair => idPair.id === menuId)
+        
+        if (idInCart) {
+            idInCart.quantity++
+        } else {
+            cartArr.push({id: menuId, quantity: 1})
+        }
+
+        console.log(cartArr)
+        
         renderCart()
     }
     // else it wasnt a menu item 
