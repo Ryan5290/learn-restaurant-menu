@@ -6,15 +6,22 @@ const payForm = document.getElementById('pay-form')
 let cartArr = []
 
 document.addEventListener('click', function(e){
-    // do submit buttons first then the menu items
-    const menuId = e.target.dataset.id
-    if (menuId){
-        cartArr.push(Number(menuId))
+    const target = e.target // what was clicked
 
-        console.log(cartArr)
-        
+    // target was a add button
+    if (target.dataset.add){
+        const menuId = target.dataset.add
+        cartArr.push(Number(menuId))        
         renderCart()
     }
+
+    // target was a remove button
+    else if (target.dataset.remove) {
+        const cartIndex = target.dataset.remove
+        cartArr.splice(cartIndex, 1)
+        renderCart()
+    }
+
     // else it wasnt a menu item 
     // (at this point it should be other 2 btns are accounted for above)
     // ^ not coded yet though
@@ -33,7 +40,7 @@ function renderMenu() {
                     <p class="item-ingreds">${item.ingredients.join(', ')}</p>
                     <p class="item-price">$${item.price}</p>
                 </div>
-                <button class="item-btn" data-id="${item.id}">+</button>
+                <button class="item-btn" data-add="${item.id}">+</button>
             </div>
             <hr></hr>
         `
@@ -63,12 +70,14 @@ function renderCart() {
     }, 0)
     let cartHtml = ''
 
-    for (let item of objsInCart) {
+    // for (let item of objsInCart) {
+    for (let i = 0; i < objsInCart.length; i++) {
+        const { name, price } = objsInCart[i]
         cartHtml += `
             <div class="item-info">
-                <p class="cart-item">${item.name}</p>
-                <button>remove</button>
-                <p class="cart-price">$${item.price}</p>
+                <p class="cart-item">${name}</p>
+                <button data-remove="${i}">remove</button>
+                <p class="cart-price">$${price}</p>
             </div>
         `
     }
